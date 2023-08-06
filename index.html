@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CORS</title>
+</head>
+<body>
+    Response: <span id="response"></span>
+</body>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(function() {
+        $.ajax({
+            url: 'https://velocity-computing-1481--devpnt.sandbox.my.site.com/pntBotTest/embeddedService/sidebarApp.app?aura.format=JSON&aura.formatAdapter=LIGHTNING_OUT&guestUserLang=en-US&eswConfigDeveloperName=BotDevTestEmbeddedServiceDeployment',
+            success: res => {
+                $('#response').text(res);
+            },
+            error: err => {
+                $('#response').text(err.statusText);
+            }
+        })
+    });
+</script>
+</html>
